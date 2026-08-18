@@ -27,12 +27,12 @@
 
 ---
 
-## 🧩 Модуль 1: Массивы и Строки
-### Дни 4–6 | Sliding Window, Two Pointers, Prefix Sum
+## ✅ 🧩 Модуль 1: Массивы и Строки
+### ✅ Дни 4–6 | Sliding Window, Two Pointers, Prefix Sum
 
 **✅ День 4:** Sliding Window (фиксированный и динамический)  
 **✅ День 5:** Two Pointers (сортировка, удаление дубликатов, слияние)  
-**День 6:** Prefix Sum + HashMap для поиска подмассивов
+**✅ День 6:** Prefix Sum + HashMap для поиска подмассивов
 
 📌 **Задачи:**  
 - Container With Most Water  
