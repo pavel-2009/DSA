@@ -11,7 +11,6 @@ class LinkedList:
     def __init__(self):
         self.head: Node | None = None
         self.last: Node | None = None
-        self.prev_last: Node | None = None
 
     def append_end(self, node: Node) -> None:
         if not self.head:
@@ -20,7 +19,6 @@ class LinkedList:
             return
 
         self.last.next = node
-        self.prev_last = self.last
         self.last = node
 
     def append_start(self, node: Node) -> None:
@@ -59,7 +57,13 @@ class LinkedList:
             self.head = None
             return
 
-        self
+        current = self.head
+
+        while current.next:
+            current = current.next
+
+        current.next = None
+        self.last = current
 
     def delete_after(self, current: Node) -> None:
         pass
