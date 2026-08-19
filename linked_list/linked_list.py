@@ -40,7 +40,14 @@ class LinkedList:
         current.next = node
 
     def delete_start(self) -> None:
-        pass
+        if not self.head:
+            return
+
+        if not self.head.next:
+            self.head = None
+            return
+
+        self.head = self.head.next
 
     def delete_end(self) -> None:
         pass
