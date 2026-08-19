@@ -118,7 +118,11 @@ class LinkedList:
         return self.len
 
     def __iter__(self):
-        pass
+        current = self.head
+
+        while current:
+            yield current
+            current = current.next
 
     def __str__(self) -> str:
         values = []
