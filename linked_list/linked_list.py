@@ -74,7 +74,21 @@ class LinkedList:
         self.len -= 1
 
     def delete_after(self, current: Node) -> None:
-        pass
+        if not self.head:
+            return
+
+        if not self.head.next:
+            self.head = None
+            self.len -= 1
+            return
+
+        current_ = self.head
+
+        while current_ != current:
+            current_ = current_.next
+
+        current_.next = current_.next.next
+        self.len -= 1
 
     def find(self, value: int) -> Node | None:
         pass
