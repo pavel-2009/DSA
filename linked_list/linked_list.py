@@ -85,13 +85,28 @@ class LinkedList:
         current_ = self.head
 
         while current_ != current:
+            if not current_.next:
+                return None
+            
             current_ = current_.next
 
         current_.next = current_.next.next
         self.len -= 1
 
     def find(self, value: int) -> Node | None:
-        pass
+        current = self.head
+
+        while current.value != value:
+            if not current.next:
+                return None
+
+            current = current.next
+
+        if current:
+            return current
+
+        return None
+            
 
     def contains(self, value: int) -> bool:
         pass
