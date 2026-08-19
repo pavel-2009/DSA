@@ -1,40 +1,46 @@
 """Linked list core realisation"""
 
+
 class Node:
-    def __init__(self, value: int, next: Node | None):
+    def __init__(self, value: int, next: "Node | None" = None):
         self.value = value
         self.next = next
 
 
 class LinkedList:
-    def __init__(self, head: Node):
-        self.head = head
-        self.last = self.head
+    def __init__(self):
+        self.head: Node | None = None
+        self.last: Node | None = None
 
-    def append_end(self, node: Node):
-        if not self.head:
-            self.head = node
-            self.last = self.head
-            return
+    def append_end(self, node: Node) -> None:
+        pass
 
-        self.last.next = node
-        self.last = self.last.nest
+    def append_start(self, node: Node) -> None:
+        pass
 
-    def append_start(self, node: Node):
-        if not self.head:
-            self.head = node
-            self.last = self.head
-            return
+    def insert_after(self, current: Node, node: Node) -> None:
+        pass
 
-        node.next = self.head
-        self.head = node
+    def delete_start(self) -> None:
+        pass
 
-    def append(self, node: Node, current: Node):
-        if not self.head:
-            self.head = node
-            self.last = self.head
-            return
+    def delete_end(self) -> None:
+        pass
 
-        next_ = current.next.next
-        current.next = node
-        current.next.next = next_
+    def delete_after(self, current: Node) -> None:
+        pass
+
+    def find(self, value: int) -> Node | None:
+        pass
+
+    def contains(self, value: int) -> bool:
+        pass
+
+    def __len__(self) -> int:
+        pass
+
+    def __iter__(self):
+        pass
+
+    def __str__(self) -> str:
+        pass
