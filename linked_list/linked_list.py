@@ -36,11 +36,17 @@ class LinkedList:
         self.len += 1
 
     def insert_after(self, current: Node, node: Node) -> None:
+        if not current:
+            return
+        
         if not self.head:
             self.head = node
             self.last = self.head
             self.len += 1
             return
+
+        if self.last == current:
+            self.last = node
 
         node.next = current.next
         current.next = node
@@ -86,6 +92,9 @@ class LinkedList:
             self.head = None
             self.last = None
             self.len -= 1
+            return
+
+        if not current.next:
             return
 
         current_ = self.head
