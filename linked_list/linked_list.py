@@ -13,7 +13,13 @@ class LinkedList:
         self.last: Node | None = None
 
     def append_end(self, node: Node) -> None:
-        pass
+        if not self.head:
+            self.head = node
+            self.last = self.head
+            return
+
+        self.last.next = node
+        self.last = node
 
     def append_start(self, node: Node) -> None:
         pass
