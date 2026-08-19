@@ -31,7 +31,13 @@ class LinkedList:
         self.head = node
 
     def insert_after(self, current: Node, node: Node) -> None:
-        pass
+        if not self.head:
+            self.head = node
+            self.last = self.head
+            return
+
+        node.next = current.next.next
+        current.next = node
 
     def delete_start(self) -> None:
         pass
