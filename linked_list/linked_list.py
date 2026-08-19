@@ -94,7 +94,7 @@ class LinkedList:
             self.len -= 1
             return
 
-        if not current.next:
+        if not current or not current.next:
             return
 
         current_ = self.head
@@ -104,6 +104,9 @@ class LinkedList:
                 return None
             
             current_ = current_.next
+
+        if current_.next == self.last:
+            self.last = current_
 
         current_.next = current_.next.next
         self.len -= 1
