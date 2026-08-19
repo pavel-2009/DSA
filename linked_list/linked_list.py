@@ -109,10 +109,15 @@ class LinkedList:
             
 
     def contains(self, value: int) -> bool:
-        pass
+        value = self.find(value)
+
+        if value:
+            return True
+
+        return False
 
     def __len__(self) -> int:
-        pass
+        return self.len
 
     def __iter__(self):
         pass
