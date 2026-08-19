@@ -17,6 +17,7 @@ class LinkedList:
         if not self.head:
             self.head = node
             self.last = self.head
+            self.len += 1
             return
 
         self.last.next = node
@@ -27,6 +28,7 @@ class LinkedList:
         if not self.head:
             self.head = node
             self.last = self.head
+            self.len += 1
             return
 
         node.next = self.head
@@ -37,9 +39,10 @@ class LinkedList:
         if not self.head:
             self.head = node
             self.last = self.head
+            self.len += 1
             return
 
-        node.next = current.next.next
+        node.next = current.next
         current.next = node
         self.len += 1
 
@@ -49,6 +52,7 @@ class LinkedList:
 
         if not self.head.next:
             self.head = None
+            self.last = None
             self.len -= 1
             return
 
@@ -61,12 +65,13 @@ class LinkedList:
 
         if not self.head.next:
             self.head = None
+            self.last = None
             self.len -= 1
             return
 
         current = self.head
 
-        while current.next:
+        while current.next != self.last:
             current = current.next
 
         current.next = None
@@ -79,6 +84,7 @@ class LinkedList:
 
         if not self.head.next:
             self.head = None
+            self.last = None
             self.len -= 1
             return
 
@@ -96,25 +102,17 @@ class LinkedList:
     def find(self, value: int) -> Node | None:
         current = self.head
 
-        while current.value != value:
-            if not current.next:
-                return None
+        while current:
+            if current.value == value:
+                return current
 
             current = current.next
-
-        if current:
-            return current
 
         return None
             
 
     def contains(self, value: int) -> bool:
-        value = self.find(value)
-
-        if value:
-            return True
-
-        return False
+        return self.find(value) is not None
 
     def __len__(self) -> int:
         return self.len
@@ -123,4 +121,11 @@ class LinkedList:
         pass
 
     def __str__(self) -> str:
-        pass
+        values = []
+        current = self.head
+
+        while current:
+            values.append(str(current.value))
+            current = current.next
+
+        return " -> ".join(values) + " -> None"
