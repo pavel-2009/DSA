@@ -22,7 +22,13 @@ class LinkedList:
         self.last = node
 
     def append_start(self, node: Node) -> None:
-        pass
+        if not self.head:
+            self.head = node
+            self.last = self.head
+            return
+
+        node.next = self.head
+        self.head = node
 
     def insert_after(self, current: Node, node: Node) -> None:
         pass
