@@ -143,6 +143,33 @@ class LinkedList:
 
         self.head = prev
 
+    def reverse_between(self, a: int, b: int):
+        before = self.head
+
+        while before.next.value != a:
+            before = before.next
+
+        if not before:
+            return
+
+        start = before.next
+
+        prev = None
+        current = start
+
+        while current.value != b:
+            next_ = current.next
+            current.next = prev
+
+            prev = current
+            current = next_
+
+        after = current.next
+
+        current.next = prev
+        start.next = after
+        before.next = current
+
     def __len__(self) -> int:
         return self.len
 
@@ -172,11 +199,15 @@ def main():
     node_20 = Node(20)
     node_30 = Node(30)
     node_40 = Node(40)
+    node_50 = Node(50)
+    node_60 = Node(60)
 
     # 2. Добавляем в конец
     linked_list.append_end(node_10)
     linked_list.append_end(node_20)
     linked_list.append_end(node_30)
+    linked_list.append_end(node_40)
+    linked_list.append_end(node_50)
 
     print("После append_end:")
     print(linked_list)
@@ -186,17 +217,23 @@ def main():
     linked_list.reverse()
     print("После разворота")
     print(linked_list)
+    print()
+
+    linked_list.reverse_between(40, 20)
+    print("После разворота между 40 и 20")
+    print(linked_list)
+    print()
 
     # 3. Добавляем в начало
-    linked_list.append_start(node_40)
+    linked_list.append_start(node_60)
 
     print("После append_start:")
     print(linked_list)
     print()
 
     # 4. Вставляем после конкретного узла
-    node_50 = Node(50)
-    linked_list.insert_after(node_20, node_50)
+    node_70 = Node(50)
+    linked_list.insert_after(node_20, node_70)
 
     print("После insert_after(20, 50):")
     print(linked_list)
