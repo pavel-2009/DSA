@@ -30,7 +30,7 @@ class Stack:
         return result
     
     def is_empty(self) -> bool:
-        return self.items_.head != None
+        return self.items_.head is None
 
     def size(self) -> int:
         return len(self.items_)
