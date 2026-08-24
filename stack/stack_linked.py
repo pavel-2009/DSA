@@ -27,7 +27,7 @@ class Stack:
         result = self.items_.head.value
 
         return result
-
+    
     def is_empty(self) -> bool:
         return self.items_.head != None
 
