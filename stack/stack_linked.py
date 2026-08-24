@@ -24,7 +24,6 @@ class Stack:
     def peek(self) -> Optional[int]:
         if self.is_empty():
             raise IndexError("Peek from an empty stack")
-
         result = self.items_.head.value
 
         return result
