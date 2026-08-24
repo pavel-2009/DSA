@@ -15,7 +15,9 @@ class LinkedList:
         self.last: Node | None = None
         self.len = 0
 
-    def append_end(self, node: Node) -> None:
+    def append_end(self, value: int) -> None:
+        node = Node(value)
+
         if not self.head:
             self.head = node
             self.last = self.head
@@ -26,7 +28,9 @@ class LinkedList:
         self.last = node
         self.len += 1
 
-    def append_start(self, node: Node) -> None:
+    def append_start(self, value: int) -> None:
+        node = Node(value)
+        
         if not self.head:
             self.head = node
             self.last = self.head
@@ -37,7 +41,9 @@ class LinkedList:
         self.head = node
         self.len += 1
 
-    def insert_after(self, current: Node, node: Node) -> None:
+    def insert_after(self, current: Node, value: int) -> None:
+        node = Node(value)
+
         if not current:
             return
         

@@ -1,7 +1,5 @@
 """Stack core realisation based on linked list"""
 
-from typing import Optional
-
 from linked_list.linked_list import LinkedList, Node
 
 
@@ -10,10 +8,9 @@ class Stack:
         self.items_ = LinkedList()
 
     def push(self, value: int):
-        node = Node(value)
-        self.items_.append_start(node)
+        self.items_.append_start(value)
     
-    def pop(self) -> Optional[int]:
+    def pop(self) -> int:
         if self.is_empty():
             raise IndexError("Pop from an empty stack")
 
@@ -22,7 +19,7 @@ class Stack:
 
         return result
 
-    def peek(self) -> Optional[int]:
+    def peek(self) -> int:
         if self.is_empty():
             raise IndexError("Peek from an empty stack")
         result = self.items_.head.value
