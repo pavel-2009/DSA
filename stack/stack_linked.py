@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from linked_list.linked_list import LinkedList
+from linked_list.linked_list import LinkedList, Node
 
 
 class Stack:
@@ -10,7 +10,8 @@ class Stack:
         self.items_ = LinkedList()
 
     def push(self, value: int):
-        self.items_.append_start(value)
+        node = Node(value)
+        self.items_.append_start(node)
     
     def pop(self) -> Optional[int]:
         if self.is_empty():
