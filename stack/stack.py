@@ -1,7 +1,5 @@
 """Stack core realisation"""
 
-from typing import Optional
-
 
 class Stack:
     def __init__(self):
@@ -10,20 +8,20 @@ class Stack:
     def push(self, value: int):
         self.items_.append(value)
 
-    def pop(self) -> Optional[int]:
+    def pop(self) -> int:
         if self.is_empty():
             raise IndexError("Pop from empty stack")
 
         return self.items_.pop()
 
-    def peek(self):
+    def peek(self) -> int:
         if self.is_empty():
             raise IndexError("peek from empty stack")
 
         return self._items[-1]
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return len(self.items_) == 0
 
-    def size(self):
+    def size(self) -> int:
         return len(self.items_)
