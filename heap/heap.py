@@ -55,3 +55,17 @@ class MinHeap:
                 break
 
             self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i] 
+
+
+if __name__ == '__main__':
+    heap = MinHeap()
+
+    heap.push(5)
+    heap.push(3)
+    heap.push(8)
+    heap.push(1)
+    heap.push(4)
+
+    print(heap.heap)
+
+    
