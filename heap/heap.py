@@ -57,6 +57,29 @@ class MinHeap:
             self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i] 
 
 
+def heapify(arr):
+    parent = (len(arr) // 2) - 1
+
+    def sift_up(arr, i):
+        while i > 0:
+            parent = (i - 1) // 2
+
+            if arr[parent] <= arr[i]:
+                break
+
+            arr[parent], arr[i] = arr[i], arr[parent]
+
+            i = parent
+
+        return arr
+
+    for i in range(parent, 0, -1):
+        arr = sift_up(arr, i)
+
+    return arr
+
+
+
 if __name__ == '__main__':
     heap = MinHeap()
 
@@ -68,4 +91,4 @@ if __name__ == '__main__':
 
     print(heap.heap)
 
-    
+
