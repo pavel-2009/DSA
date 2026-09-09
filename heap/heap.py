@@ -102,10 +102,57 @@ if __name__ == '__main__':
     heap.push(1)
     heap.push(4)
 
+    print("Push:")
     print(heap.heap)
+    
+    print("\nPop:")
+    print("Удалили:", heap.pop())
+    print("Heap:", heap.heap)
+
+    print("Удалили:", heap.pop())
+    print("Heap:", heap.heap)
 
     arr = [5, 3, 8, 1, 4]
 
+    print("\nHeapify:")
+    print("До:", arr)
+
     heap_arr = heapify(arr)
 
-    print(heap_arr)
+    print("После:", heap_arr)
+
+    arr = [10, 2, 7, 1, 9, 3, 6, 4, 8, 5]
+
+    print("\nHeapify 2:")
+    print("До:", arr)
+
+    heap_arr = heapify(arr)
+
+    print("После:", heap_arr)
+
+    heap = MinHeap()
+
+    for value in [10, 20, 5, 3, 7, 1, 15]:
+        heap.push(value)
+        print(f"После push({value}):", heap.heap)
+
+    print("\nВсе элементы по возрастанию:")
+
+    while heap.heap:
+        print(heap.pop(), end=" ")
+
+    print()
+
+    print("\n--- Manual practice ---")
+
+    arr1 = [10, 5, 7, 2, 3]
+    print("arr1:", arr1)
+    print("heapify:", heapify(arr1))
+
+    arr2 = [9, 4, 7, 1, 2, 6, 5]
+    print("arr2:", arr2)
+    print("heapify:", heapify(arr2))
+
+    arr3 = [20, 15, 10, 5, 8, 3, 7, 1]
+    print("arr3:", arr3)
+    print("heapify:", heapify(arr3))
