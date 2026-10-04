@@ -197,8 +197,8 @@
 ## 🧩 Модуль 13: DP — 1D
 ### Дни 40–42 | Мемоизация, табуляция
 
-**День 40:** Fibonacci, Climbing Stairs, House Robber  
-**День 41:** Longest Increasing Subsequence (O(n log n))  
+**✅ День 40:** Fibonacci, Climbing Stairs, House Robber  
+**✅ День 41:** Longest Increasing Subsequence (O(n log n))  
 **День 42:** Edit Distance (переход к 2D)
 
 📌 **Задачи:**  
