@@ -194,12 +194,12 @@
 
 ---
 
-## 🧩 Модуль 13: DP — 1D
-### Дни 40–42 | Мемоизация, табуляция
+## ✅ 🧩 Модуль 13: DP — 1D
+### ✅ Дни 40–42 | Мемоизация, табуляция
 
 **✅ День 40:** Fibonacci, Climbing Stairs, House Robber  
 **✅ День 41:** Longest Increasing Subsequence (O(n log n))  
-**День 42:** Edit Distance (переход к 2D)
+**✅ День 42:** Edit Distance (переход к 2D)
 
 📌 **Задачи:**  
 - Coin Change  
@@ -338,7 +338,7 @@
 - ✅ Модуль 10: Графы — BFS/DFS
 - ✅ Модуль 11: Топология, Dijkstra
 - ✅ Модуль 12: Union-Find
-- [ ] Модуль 13: DP 1D
+- ✅ Модуль 13: DP 1D
 - [ ] Модуль 14: DP 2D
 - [ ] Модуль 15: Жадные алгоритмы
 - [ ] Модуль 16: Backtracking
